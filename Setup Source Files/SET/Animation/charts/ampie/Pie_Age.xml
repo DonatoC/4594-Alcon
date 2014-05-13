@@ -1,0 +1,77 @@
+<settings>
+  <pie>
+    <colors>E58F36,2981AB,C4D542,707070,C18138,2D8699</colors>
+    <y>38%</y>
+    <radius>50%</radius>
+    <inner_radius>40%</inner_radius>
+    <height>30</height>
+    <angle>40</angle>
+    <hover_brightness>25</hover_brightness>
+    <gradient>radial</gradient>
+    <gradient_ratio>-10,0,-10</gradient_ratio>
+  </pie>
+  <data_type>csv</data_type>
+  <add_time_stamp>1</add_time_stamp>
+  <thousands_separator>,</thousands_separator>
+  <decimals_separator>.</decimals_separator>
+  <background>
+    <alpha>100</alpha>
+  </background>
+  <balloon>
+    <show>{title}{value}</show>
+    <alpha>90</alpha>
+    <border_color>666666</border_color>
+  </balloon>
+  <legend>
+    <x>5%</x>
+    <y>80%</y>
+    <max_columns>2</max_columns>
+    <color>FF0000</color>
+    <text_color>333333</text_color>
+    <text_size>18</text_size>
+    <align>center</align>
+    <key>
+      <size>23</size>
+      <border_color>333333</border_color>
+    </key>
+    <values>
+      <enabled>1</enabled>
+      <width>0</width>
+      <text>| {value} | {percents} % |</text>
+    </values>
+  </legend>
+  <animation>
+    <start_effect>regular</start_effect>
+    <start_radius>50%</start_radius>
+    <pull_out_effect>strong</pull_out_effect>
+  </animation>
+  <data_labels>
+    <radius>6%</radius>
+    <text_color>000000</text_color>
+    <text_size>14</text_size>
+    <max_width>5000</max_width>
+    <line_color>666666</line_color>
+    <line_alpha>76</line_alpha>
+  </data_labels>
+  <error_messages>
+    <color>666666</color>
+    <alpha>80</alpha>
+    <text_size>20</text_size>
+  </error_messages>
+  <strings>
+    <no_data>No data for selected report</no_data>
+  </strings>
+  <context_menu>
+    <default_items>
+      <print>0</print>
+    </default_items>
+  </context_menu>
+  <labels>
+    <label lid="0">
+      <text>Demographics and presentation: Gender</text>
+      <text_color>2981AB</text_color>
+      <text_size>32</text_size>
+      <align>center</align>
+    </label>
+  </labels>
+</settings>

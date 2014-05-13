@@ -1,0 +1,281 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{54A5C9B0-2B5B-46ED-AEDC-8017C255F22E}</ProjectGuid>
+        <MainSource>AuditTool.dpr</MainSource>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <ProjectVersion>15.3</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Locale>2057</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;FireDAC.VCLUI;FMXTee.Chart;Data.Win;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Keys>CompanyName=Abacus International - alcon;FileDescription=Audit tool for VitreoMacular Traction (VMT) and Macular Hole (MH) ;FileVersion=1.0.0.0;InternalName=SET;LegalCopyright=;LegalTrademarks=;OriginalFilename=Alcon;ProductName=;ProductVersion=1.0.0.0;Comments=Updated DB, layout and business logic to use DBExpress and CRUD type functionalities</VerInfo_Keys>
+        <DCC_UnitSearchPath>\\vmware-host\Shared Folders\Documents\AbacusWorkingFiles\Alcon\ProjectFiles DelphiXE5 EXCEL;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ExeOutput>\\vmware-host\Shared Folders\Documents\AbacusWorkingFiles\Alcon\Setup Source Files DelphiXE5\SET</DCC_ExeOutput>
+        <DCC_DcpOutput>\\vmware-host\Shared Folders\Documents\AbacusWorkingFiles\Alcon\ProjectFiles DelphiXE5 EXCEL\</DCC_DcpOutput>
+        <DCC_DcuOutput>\\vmware-host\Shared Folders\Documents\AbacusWorkingFiles\Alcon\ProjectFiles DelphiXE5 EXCEL</DCC_DcuOutput>
+        <BRCC_OutputDir>\\vmware-host\Shared Folders\Documents\AbacusWorkingFiles\Alcon\ProjectFiles DelphiXE5 EXCEL\</BRCC_OutputDir>
+        <DCC_DependencyCheckOutputName>C:\Dev\AlconDev\SET\AuditTool.exe</DCC_DependencyCheckOutputName>
+        <DCC_UsePackage>vclx;vcl;rtl;vclactnband;vclib;xmlrtl;VclSmp;dclOffice2k;designide;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Platform>x86</DCC_Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Icon_MainIcon>AuditTool_Icon.ico</Icon_MainIcon>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>AuditTool_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_DcpOutput>\\vmware-host\Shared Folders\Documents\AbacusWorkingFiles\Alcon\ProjectFiles DelphiXE5 EXCEL\</DCC_DcpOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_ExeOutput>\\vmware-host\Shared Folders\Documents\AbacusWorkingFiles\Alcon\Setup Source Files DelphiXE5\SET\</DCC_ExeOutput>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="About\About.pas">
+            <Form>Aboutbox</Form>
+        </DCCReference>
+        <DCCReference Include="Splash\Splash.pas">
+            <Form>Splashscreen</Form>
+        </DCCReference>
+        <DCCReference Include="Functions.pas"/>
+        <DCCReference Include="References\ref.pas">
+            <Form>References</Form>
+        </DCCReference>
+        <DCCReference Include="PI.pas">
+            <Form>PrescInfo</Form>
+        </DCCReference>
+        <DCCReference Include="DataModuleUnit2.pas">
+            <Form>DataModule2</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Unit1.pas">
+            <Form>MainForm</Form>
+        </DCCReference>
+        <DCCReference Include="UtilitiesUnit.pas">
+            <Form>frmUtilities</Form>
+        </DCCReference>
+        <DCCReference Include="AboutNew\newAboutUnit.pas">
+            <Form>frmNewAbout</Form>
+        </DCCReference>
+        <DCCReference Include="FlashRef\FlashRefunit.pas">
+            <Form>Reffrm</Form>
+        </DCCReference>
+        <DCCReference Include="frmConfrimExitU.pas">
+            <Form>frmConfirmExit</Form>
+        </DCCReference>
+        <DCCReference Include="RegistrationUnit.pas">
+            <Form>frmRegistration</Form>
+        </DCCReference>
+        <DCCReference Include="D9EXL\UserDefPop.pas">
+            <Form>frmUserDefPop</Form>
+        </DCCReference>
+        <DCCReference Include="Fade\uFadeForm.pas">
+            <Form>frmFadeForm</Form>
+        </DCCReference>
+        <DCCReference Include="frm_frmSpreadsheetUnit.pas">
+            <Form>frmSpreadsheet</Form>
+        </DCCReference>
+        <DCCReference Include="unitDBControls.pas">
+            <Form>frmDBControls</Form>
+        </DCCReference>
+        <DCCReference Include="uniSectionEnd.pas">
+            <Form>frmEndSection</Form>
+        </DCCReference>
+        <DCCReference Include="uniEpisodeDatePicker.pas">
+            <Form>frmEpisodeDatePicker</Form>
+        </DCCReference>
+        <DCCReference Include="Report.pas">
+            <Form>frmReport</Form>
+        </DCCReference>
+        <DCCReference Include="unitDBControlsForReport.pas">
+            <Form>frmDBControlsForReport</Form>
+        </DCCReference>
+        <DCCReference Include="unitWindowCapture.pas">
+            <Form>frmWindowCapture</Form>
+        </DCCReference>
+        <DCCReference Include="uniImagesToCapture.pas">
+            <Form>frmImagesToCapture</Form>
+        </DCCReference>
+        <DCCReference Include="uniGen.pas">
+            <Form>frmGen</Form>
+        </DCCReference>
+        <DCCReference Include="uniNewID.pas">
+            <Form>frmNewID</Form>
+        </DCCReference>
+        <DCCReference Include="unitReportUserOptions.pas">
+            <Form>frmReportUserOptions</Form>
+        </DCCReference>
+        <DCCReference Include="unitUltimateSplash.pas">
+            <Form>frmUltimateSplash</Form>
+        </DCCReference>
+        <DCCReference Include="uConfirmDelete.pas">
+            <Form>frmConfirmDelete</Form>
+        </DCCReference>
+        <None Include="AuditTool.todo"/>
+        <None Include="ModelSupport_AuditTool\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\Template\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\frmConfrimExitU\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\uFadeForm\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\Unit1\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\ref\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\UtilitiesUnit\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\RegistrationUnit\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\FlashRefunit\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\newAboutUnit\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\frm_frmSpreadsheetUnit\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\UserDefPop\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\About\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\DataModuleUnit2\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\functions\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\PI\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\Splash\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\AuditTool\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\unitDBControls\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\uFadeForm\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\ref\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\About\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\UtilitiesUnit\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\uniSectionEnd\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\UserDefPop\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\RegistrationUnit\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\newAboutUnit\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\functions\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\FlashRefunit\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\PI\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\unitDBControls\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\Splash\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\DataModuleUnit2\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\AuditTool\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\frm_frmSpreadsheetUnit\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\frmConfrimExitU\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\Unit1\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\uniImagesToCapture\default.txvpck"/>
+        <None Include="ModelSupport_AuditTool\unitUltimateSplash\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\uniEpisodeDatePicker\default.txaPackage"/>
+        <None Include="ModelSupport_AuditTool\uniImagesToCapture\default.txaPackage"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">AuditTool.dpr</Source>
+                </Source>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <Language>
+                    <Language Name="ProjectLang">$00000809</Language>
+                </Language>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">2057</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">Abacus International</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ModelSupport>True</ModelSupport>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

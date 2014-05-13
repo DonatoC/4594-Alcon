@@ -1,0 +1,550 @@
+
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            
+//  File Name:	Setup.rul                                                   
+//                                                                            
+//  Description:	InstallShield script                                        
+//                                                                            
+//  Comments:	This script was generated based on the selections you made in
+//           	the Project Wizard.  Refer to the help topic entitled "Modify      
+//           	the script that the Project Wizard generates" for information
+//				on possible next steps.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+// Include header files    
+#include "ifx.h"
+#include "smplFont.h" 
+#include "smplFont.rul"   
+#include "ntperm.h"    
+#include "ntperm.rul"
+
+#define CSIDL_COMMON_DOCUMENTS 0x002e // for All Users\Documents
+#define CSIDL_COMMON_APPDATA 0x0023 // for My Documents  
+#define CSIDL_PROGRAM_FILES 0x0026 // for Program Files   
+
+/*
+CSIDL_DESKTOP = 0x0000, 
+CSIDL_INTERNET = 0x0001, 
+CSIDL_PROGRAMS = 0x0002,
+CSIDL_CONTROLS = 0x0003,
+CSIDL_PRINTERS = 0x0004, 
+CSIDL_PERSONAL = 0x0005, 
+CSIDL_FAVORITES = 0x0006,
+CSIDL_STARTUP = 0x0007,
+CSIDL_RECENT = 0x0008, 
+CSIDL_SENDTO = 0x0009, 
+CSIDL_BITBUCKET = 0x000A,
+CSIDL_STARTMENU = 0x000B, 
+CSIDL_MYDOCUMENTS = 0x000C, 
+CSIDL_MYMUSIC = 0x000D,
+CSIDL_MYVIDEO = 0x000E,
+CSIDL_DESKTOPDIRECTORY = 0x0010, 
+CSIDL_DRIVE = 0x0011,
+CSIDL_NETWORK = 0x0012, 
+CSIDL_NETHOOD = 0x0013, 
+CSIDL_FONTS = 0x0014,
+CSIDL_TEMPLATES = 0x0015, 
+CSIDL_COMMON_STARTMENU = 0x0016,
+CSIDL_COMMON_PROGRAMS = 0x0017,
+CSIDL_COMMON_STARTUP = 0x0018, 
+CSIDL_COMMON_DESKTOPDIRECTORY = 0x0019,
+CSIDL_APPDATA = 0x001A,
+CSIDL_PRINTHOOD = 0x001B, 
+CSIDL_LOCAL_APPDATA = 0x001C, 
+CSIDL_ALTSTARTUP = 0x001D,
+CSIDL_COMMON_ALTSTARTUP = 0x001E, 
+CSIDL_COMMON_FAVORITES = 0x001F,
+CSIDL_INTERNET_CACHE = 0x0020,
+CSIDL_COOKIES = 0x0021, 
+CSIDL_HISTORY = 0x0022, 
+CSIDL_COMMON_APPDATA = 0x0023, 
+CSIDL_WINDOWS = 0x0024,
+CSIDL_SYSTEM = 0x0025, 
+CSIDL_PROGRAM_FILES = 0x0026, 
+CSIDL_MYPICTURES = 0x0027, 
+CSIDL_PROFILE = 0x0028,
+CSIDL_PROGRAM_FILES_COMMON = 0x002B, 
+CSIDL_COMMON_TEMPLATES = 0x002D,
+CSIDL_COMMON_DOCUMENTS = 0x002E, 
+CSIDL_COMMON_ADMINTOOLS = 0x002F,
+CSIDL_ADMINTOOLS = 0x0030, 
+CSIDL_COMMON_MUSIC = 0x0035,
+CSIDL_COMMON_PICTURES = 0x0036,
+ CSIDL_COMMON_VIDEO = 0x0037,
+CSIDL_CDBURN_AREA = 0x003B, 
+CSIDL_PROFILES = 0x003E, 
+CSIDL_FLAG_CREATE = 0x8000  
+*/ 
+        
+
+BOOL bRemove;
+    
+////////////////////// string defines ////////////////////////////
+
+//////////////////// installation declarations ///////////////////
+ prototype NUMBER SHFolder.SHGetFolderPathA(HWND, NUMBER, NUMBER, NUMBER, BYREF STRING);
+
+    // your DLL function prototypes
+
+
+// ---- script function prototypes -----
+
+
+    // your script function prototypes
+
+    // your global variables    
+    
+    string  AppDataFold, ComDocFold;
+// ----- DLL function prototypes -----
+
+
+    // your DLL function prototypes
+
+
+// ---- script function prototypes -----
+
+
+    // your script function prototypes
+
+    // your global variables
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           
+//  FUNCTION:   OnFirstUIBefore                                            
+//                                                                           
+//  EVENT:      FirstUIBefore event is sent when installation is run for the first
+//              time on given machine. In the handler installation usually displays
+//              UI allowing end user to specify installation parameters. After this
+//              function returns, ComponentTransferData is called to perform file
+//              transfer.
+//                                                                           
+///////////////////////////////////////////////////////////////////////////////
+function OnFirstUIBefore()
+    number  nResult,nSetupType;
+    string  szTitle, szMsg;
+    string  szLicenseFile, szQuestion, szKey1;
+begin	  
+
+Enable(BACKGROUND) ;
+Enable(FULLWINDOWMODE); 
+SetColor (BACKGROUND, RGB(21, 8, 114)); 
+//PlaceWindow (BILLBOARD, 30, 30, );     
+//PlaceWindow (STATUS, 20, 20, LOWER_RIGHT);  
+SetFont (FONT_TITLE, STYLE_BOLD | STYLE_SHADOW, "Courier New");  
+SetTitle( @TITLE_MAIN, 24, WHITE );                                        
+SetTitle( @TITLE_CAPTIONBAR, 0, BACKGROUNDCAPTION );
+     
+     
+    // TO DO: if you want to enable background, window title, and caption bar title                                                                     
+     
+      		                   
+    // Enable( FULLWINDOWMODE );						   
+    // Enable( BACKGROUND );							  
+    // SetColor(BACKGROUND,RGB (0, 128, 128));					   
+   
+  TARGETDIR = PROGRAMFILES ^ "\\Abacus";          
+  
+  RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+
+szKey1 = "Software\\Microsoft\\Windows\\CurrentVersion\\Run\\";        
+
+RegDBDeleteValue(szKey1,"Abacus Auto Updater"); 
+RegDBDeleteValue(szKey1,"Abacus Auto Updater x86");
+ 
+                              
+ if  (StrFind (TARGETDIR , "x86") <0) then                      
+ // if (PROGRAMFILES = "C:\Program Files") then 
+         CreateRegistrySet("RegistrySet"); 	
+      else
+         //MessageBox ("Selfit Was previously installed.", INFORMATION);
+         CreateRegistrySet("RegistrySetx86"); 	
+      endif; 
+      
+
+Dlg_Start:     
+DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);
+    // beginning of dialogs label
+
+Dlg_SdWelcome: 
+ //DialogSetInfo(DLG_INFO_ALTIMAGE,SUPPORTDIR^"Welcome.bmp;0;<unused>;<unused>;0,0,255", TRUE);
+  DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);  
+  
+
+ 
+    szTitle = "";
+    szMsg   = "";
+    nResult = SdWelcome( szTitle, szMsg );
+    if (nResult = BACK) goto Dlg_Start;
+
+Dlg_SdLicense:       
+DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);
+    szLicenseFile = SUPPORTDIR ^ "license.txt";
+    szTitle    = "";
+    szMsg      = "";
+    szQuestion = "";
+    nResult    = SdLicense( szTitle, szMsg, szQuestion, szLicenseFile );
+    if (nResult = BACK) goto Dlg_SdWelcome;
+
+Dlg_ObjDialogs:   
+DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);
+    nResult = ShowObjWizardPages(nResult);
+    if (nResult = BACK) goto Dlg_SdLicense;
+    
+    // setup default status
+    SetStatusWindow(0, "");
+    Enable(STATUSEX);
+    StatusUpdate(ON, 100);
+    
+    UNINSTALL_STRING=UNINSTALL_STRING+"anything";
+    
+    return 0;
+end;
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMaintUIBefore
+//
+//  EVENT:      MaintUIBefore event is sent when end user runs installation that
+//              has already been installed on the machine. Usually this happens 
+//              through Add/Remove Programs applet. In the handler installation 
+//              usually displays UI allowing end user to modify existing installation
+//              or uninstall application. After this function returns, 
+//              ComponentTransferData is called to perform file transfer.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMaintUIBefore()  
+number  nResult,nSetupType;
+    string  szTitle, szMsg;
+    string  szLicenseFile, szQuestion, szKey1;
+begin       
+
+Enable(BACKGROUND) ;
+Enable(FULLWINDOWMODE); 
+SetColor (BACKGROUND, RGB(21, 8, 114)); 
+//PlaceWindow (BILLBOARD, 30, 30, UPPER_LEFT);     
+//PlaceWindow (STATUS, 20, 20, LOWER_RIGHT);  
+SetFont (FONT_TITLE, STYLE_BOLD | STYLE_SHADOW, "Courier New");  
+SetTitle( @TITLE_MAIN, 24, WHITE );                                        
+SetTitle( @TITLE_CAPTIONBAR, 0, BACKGROUNDCAPTION );
+if CMDLINE="" then  
+
+
+
+
+ // TO DO: if you want to enable background, window title, and caption bar title                                                                     
+    // SetTitle( @TITLE_MAIN, 24, WHITE );                                        
+    // SetTitle( @TITLE_CAPTIONBAR, 0, BACKGROUNDCAPTION ); 	                   
+    // Enable( FULLWINDOWMODE );						   
+    // Enable( BACKGROUND );							  
+    // SetColor(BACKGROUND,RGB (0, 128, 128));					   
+   
+ TARGETDIR = PROGRAMFILES ^ "\\Abacus";     
+ 
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+
+szKey1 = "Software\\Microsoft\\Windows\\CurrentVersion\\Run\\";        
+
+RegDBDeleteValue(szKey1,"Abacus Auto Updater"); 
+RegDBDeleteValue(szKey1,"Abacus Auto Updater x86");
+ 
+                              
+ if  (StrFind (TARGETDIR , "x86") <0) then                      
+ // if (PROGRAMFILES = "C:\Program Files") then 
+         CreateRegistrySet("RegistrySet"); 	
+      else
+         //MessageBox ("Selfit Was previously installed.", INFORMATION);
+         CreateRegistrySet("RegistrySetx86"); 	
+      endif; 
+      
+
+Dlg_Start:          
+DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);
+    // beginning of dialogs label
+
+Dlg_SdWelcome:      
+DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);
+    szTitle = "";
+    szMsg   = "";
+    nResult = SdWelcome( szTitle, szMsg );
+    if (nResult = BACK) goto Dlg_Start;
+
+Dlg_SdLicense:    
+DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);
+    szLicenseFile = SUPPORTDIR ^ "license.txt";
+    szTitle    = "";
+    szMsg      = "";
+    szQuestion = "";
+    nResult    = SdLicense( szTitle, szMsg, szQuestion, szLicenseFile );
+    if (nResult = BACK) goto Dlg_SdWelcome;
+
+Dlg_ObjDialogs: 
+DialogSetInfo (DLG_INFO_ALTIMAGE,SUPPORTDIR ^ "Welcome.bmp", TRUE);
+    nResult = ShowObjWizardPages(nResult);
+    if (nResult = BACK) goto Dlg_SdLicense;
+    
+    // setup default status
+    SetStatusWindow(0, "");
+    Enable(STATUSEX);
+    StatusUpdate(ON, 100);
+    
+    UNINSTALL_STRING=UNINSTALL_STRING+"anything";
+    
+bRemove=0;
+	ComponentReinstall();
+else
+bRemove=1;
+	ComponentRemoveAll();
+endif;
+
+end;
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMoving
+//
+//  EVENT:      Moving event is sent when file transfer is started as a result of
+//              ComponentTransferData call, before any file transfer operations 
+//              are performed.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMoving()
+    string szAppPath;
+begin
+    // Set LOGO Compliance Application Path 
+    // TO DO : if your application .exe is in a subfolder of TARGETDIR then add subfolder 
+    szAppPath = TARGETDIR;
+    RegDBSetItem(REGDB_APPPATH, szAppPath);
+    RegDBSetItem(REGDB_APPPATH_DEFAULT, szAppPath ^ @PRODUCT_KEY);     
+end; 
+
+ 
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMoved
+//
+//  EVENT:      Moved event is sent when file transfer started by ComponentTransferData call
+//              has finished. At this point all file transfer operations are completed 
+//              except for batch self-registration which is performed immediately after this
+//              function returns. During uninstallation this event sent after uninstallation
+//              is completed. For that reason you should not modify system state in this
+//              event handler.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMoved()
+BOOL bvFlashCheck;
+BOOL bvAdobeCheck;
+begin 
+
+//AskOptions (NONEXCLUSIVE, "Select version:" , "English" , englishCheck , "German" , germanCheck); 
+	
+//if (englishCheck = TRUE) then
+	//szProgramFolder = FOLDER_DESKTOP;
+	//DeleteFolderIcon(szProgramFolder, "OZURDEX Budget Interactive Model (Branded)");
+	//AddFolderIcon (FOLDER_DESKTOP, "OZURDEX BIM (Branded)", '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/showLogo /UK"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE); 
+	//szProgramFolder = FOLDER_STARTMENU ^ "Programs\\OZURDEX Budget Interactive Model ";
+	//AddFolderIcon (szProgramFolder, "OZURDEX Budget Interactive Model (Branded)",  '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/showLogo /UK"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE);
+
+	//szProgramFolder = FOLDER_DESKTOP;
+	//DeleteFolderIcon(szProgramFolder, "OZURDEX Budget Interactive Model (unBranded)");
+	//AddFolderIcon (FOLDER_DESKTOP, "OZURDEX BIM (unBranded)", '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/hideLogo /UK"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE); 
+	//szProgramFolder = FOLDER_STARTMENU ^ "Programs\\OZURDEX Budget Interactive Model ";
+	//AddFolderIcon (szProgramFolder, "OZURDEX Budget Interactive Model (unBranded)", '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/hideLogo /UK"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE);  
+//endif;
+
+//if (germanCheck = TRUE) then
+	//szProgramFolder = FOLDER_DESKTOP;
+	//DeleteFolderIcon(szProgramFolder, "OZURDEX BUDGETAUSWIRKUNGSMODELL (Gebrandmarkt)");
+	//AddFolderIcon (FOLDER_DESKTOP, "OZURDEX BIM (Gebrandmarkt)", '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/showLogo /German"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE); 
+	//szProgramFolder = FOLDER_STARTMENU ^ "Programs\\OZURDEX BUDGETAUSWIRKUNGSMODELL ";
+	//AddFolderIcon (szProgramFolder, "OZURDEX BUDGETAUSWIRKUNGSMODELL (Gebrandmarkt)",  '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/showLogo /German"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE);
+
+	//szProgramFolder = FOLDER_DESKTOP;
+	//DeleteFolderIcon(szProgramFolder, "OZURDEX BUDGETAUSWIRKUNGSMODELL (Nichtmarken)");
+	//AddFolderIcon (FOLDER_DESKTOP, "OZURDEX BIM (Nichtmarken)", '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/hideLogo /German"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE); 
+	//szProgramFolder = FOLDER_STARTMENU ^ "Programs\\OZURDEX BUDGETAUSWIRKUNGSMODELL ";
+	//AddFolderIcon (szProgramFolder, "OZURDEX BUDGETAUSWIRKUNGSMODELL (Nichtmarken)", '"' + PROGRAMFILES ^ '\\Abacus\\Ozurdex\\Ozurdex.exe"' +' "/hideLogo /German"', PROGRAMFILES ^"\\Abacus\\Ozurdex\\", PROGRAMFILES ^ "\\Abacus\\Ozurdex\\OZ_ICON.ico", 0, "Ctrl + Alt + M", REPLACE);    
+//endif; 
+
+//AskOptions ( NONEXCLUSIVE , "This installation requires Macromedia Flash and Adobe Acrobat reader to be installed.  If you do NOT have these products installed please tick the appropriate box to install them." , "Flash" , bvFlashCheck , "Adobe Acrobat reader" , bvAdobeCheck );  
+//if (bvFlashCheck = TRUE) then        
+//LaunchAppAndWait ( SUPPORTDIR ^"InstallAXFlash8.exe" , "", WAIT );
+    	
+//endif;    
+
+//(bvAdobeCheck = TRUE) then        
+//LaunchAppAndWait ( SUPPORTDIR ^"rp500enu.exe" , "", WAIT );
+    	
+//endif; 
+
+ LaunchAppAndWait ( TARGETDIR ^ "\\AutoUpdate\\AbacusAutoUp.exe" , "", NOWAIT );
+end;
+ 
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMaintUIAfter
+//
+//  EVENT:      MaintUIAfter event is sent after file transfer, when end user runs 
+//              installation that has already been installed on the machine. Usually 
+//              this happens through Add/Remove Programs applet. 
+//              In the handler installation usually displays UI that will inform 
+//              end user that maintenance/uninstallation has been completed successfully.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMaintUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOption1, szOption2;
+    NUMBER bOpt1, bOpt2;
+begin    
+if bRemove=1 then
+
+	Disable(STATUSEX);
+
+    ShowObjWizardPages(NEXT);
+
+	bOpt1   = FALSE;
+    bOpt2   = FALSE;
+    szMsg1  = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
+	szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);
+    SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+    
+else
+     
+         Disable(STATUSEX);
+
+    ShowObjWizardPages(NEXT);
+
+	bOpt1  = FALSE;
+    bOpt2  = FALSE;
+    szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
+    SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+endif;
+
+end;
+ 
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnFirstUIAfter
+//
+//  EVENT:      FirstUIAfter event is sent after file transfer, when installation 
+//              is run for the first time on given machine. In this event handler 
+//              installation usually displays UI that will inform end user that
+//              installation has been completed successfully.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnFirstUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOption1, szOption2;
+    NUMBER bOpt1, bOpt2;
+begin 
+//InstallFont("copgothb.ttf", "Copprplgoth Bd BT (TrueType)");
+//InstallFont("HLR_____.TTF", "Helvetica 55 Roman");    
+    
+
+    Disable(STATUSEX);
+
+    ShowObjWizardPages(NEXT);
+
+	bOpt1  = FALSE;
+    bOpt2  = FALSE;
+    szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
+    SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+end;
+ 
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnBegin
+//
+//  EVENT:      Begin event is always sent as the first event during installation.
+//
+//////////////////////////////////////////////////////////////////////////////
+function OnBegin()     
+STRING szPath;  
+NUMBER nFolder;
+begin       
+
+    // TO DO: you may change default non-UI setting, for example
+    //
+    // Disable(SELFREGISTERBATCH)
+    // SetInstallationInfo with arguments other then default
+    //
+    // You may also perform your custom initialization steps, check requirements, etc.   
+    
+    try
+//nFolder=CSIDL_COMMON_DOCUMENTS;    for save files  
+
+
+//C:\Documents and Settings\All Users\Application Data ON XP
+//C:\ProgramData ON Win 7
+    
+nFolder=CSIDL_COMMON_APPDATA;    
+szPath="";
+nResult=SHFolder.SHGetFolderPathA(NULL, nFolder, NULL, 0, szPath);
+
+if (nResult=0) then
+// additionnal processing here
+
+//FeatureSetTarget( MEDIA, "<AppDataDir>", szPath);   
+ComponentSetTarget( MEDIA, "<AppDataDir>", szPath); 
+AppDataFold = szPath; 
+
+else
+SprintfBox(SEVERE, "CSIDL_COMMON_APPDATA", "Failed(%d): %s", nResult, FormatMessage(nResult));
+endif;
+
+catch
+MessageBox("Unsupported OS.",0);
+endcatch;    
+
+//for save files  
+try
+nFolder=CSIDL_COMMON_DOCUMENTS;    //for save files      
+szPath="";
+nResult=SHFolder.SHGetFolderPathA(NULL, nFolder, NULL, 0, szPath);    
+ComDocFold = szPath;
+
+if (nResult=0) then
+// additionnal processing here
+
+//FeatureSetTarget( MEDIA, "<AppDataDir>", szPath); 
+ComponentSetTarget( MEDIA, "<ComDocDir>", szPath); 
+else
+SprintfBox(SEVERE, "CSIDL_COMMON_DOCUMENTS", "Failed(%d): %s", nResult, FormatMessage(nResult));
+endif;
+
+catch
+MessageBox("Unsupported OS.",0);
+endcatch;     
+
+nFolder=CSIDL_PROGRAM_FILES;    //for save files      
+szPath="";
+nResult=SHFolder.SHGetFolderPathA(NULL, nFolder, NULL, 0, szPath); 
+    
+if (nResult=0) then 
+ComponentSetTarget( MEDIA, "<Program_Files>", szPath);  
+else
+SprintfBox(SEVERE, "CSIDL_PROGRAM_FILES", "Failed(%d): %s", nResult, FormatMessage(nResult));
+endif;
+
+end;
+ 
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnEnd
+//
+//  EVENT:      End event is the last event. It is not sent if the installation
+//              has been aborted. In this case Abort event is sent
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnEnd()
+begin     
+nResult = GrantFullAccess(AppDataFold ^"\\Abacus", SE_FILE_OBJECT, TRUE);   
+//Possibly should be just the file and not whole abacus folder we need to test the below line
+//when we are free, also DC programatic checks of permissions would fail.
+//nResult = GrantFullAccess(AppDataFold ^"\\Abacus\\Data\\local.mdb", SE_FILE_OBJECT, TRUE); 
+end;
+
+// --- include script file section ---
+
+

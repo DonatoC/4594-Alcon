@@ -1,0 +1,237 @@
+unit FlashRefunit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  OleCtrls, ShockwaveFlashObjects_TLB, StdCtrls, ExtCtrls, ImageButtonUnit,Httpapp,
+  FlashPlayerControl, ShellApi, jpeg;
+
+type
+  TReffrm = class(TForm)
+    Button1: TButton;
+    FlashRefInfo: TTransparentFlashPlayerControl;
+    procedure aFSCommand(Sender: TObject; const command,
+      args: WideString);
+    procedure FormCreate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure FlashRefInfoxFSCommand(ASender: TObject; const command,
+      args: WideString);
+    procedure Image1MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure Image1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FlashRefInfoxMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure FlashRefInfoxMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure FlashRefInfoxMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure Image1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure FlashRefInfoxClick(Sender: TObject);
+    procedure FlashRefInfoFSCommand(ASender: TObject; const command,
+      args: WideString);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Reffrm: TReffrm;
+    AreWeDragging : Boolean;
+  StartPosX, StartPosY : integer;
+  mainformstate : boolean;
+implementation
+
+uses Unit1;
+
+{$R *.DFM}
+
+procedure TReffrm.aFSCommand(Sender: TObject;
+  const command, args: WideString);
+begin
+//mainform.Memo2.lines.append(command);
+
+   IF Pos('w',command) <> 0 then
+   BEGIN
+   Width := strtoint(Copy(command,Pos('=',command)+1,Length(command)-1));
+   Reffrm.left := Mainform.left + round((Mainform.width - Reffrm.width)/2);
+   END;
+
+   IF Pos('h',command) <> 0 then
+   begin
+   Height := strtoint(Copy(command,Pos('=',command)+1,Length(command)-1));
+   Reffrm.top := Mainform.top + round((Mainform.height - Reffrm.height)/2);
+   end;
+
+   if command = 'exit' then
+   close;
+
+end;
+
+procedure TReffrm.FormCreate(Sender: TObject);
+begin
+
+Reffrm.width := mainform.Width;
+Reffrm.height := mainform.height;
+Reffrm.top := mainform.top;
+Reffrm.left := mainform.left;
+
+//  FlashRefInfo.movie := MainForm.AppPath + 'Animation\INTER_REF.swf';
+end;
+
+procedure TReffrm.FormResize(Sender: TObject);
+begin
+{  if  Reffrm.visible then
+    begin
+      Button1.setfocus;
+      FlashRefInfo.setfocus(true);
+    end;  }
+end;
+
+procedure TReffrm.FlashRefInfoxFSCommand(ASender: TObject;
+  const command, args: WideString);
+begin
+//showmessage(command);
+// if command =
+
+   {  if  Pos('w',command) <> 0 then
+   begin
+   Width := strtoint(Copy(command,Pos('=',command)+1,Length(command)-1));
+   Reffrm.left := Mainform.left + round((Mainform.width - Reffrm.width)/2);
+   end;
+
+   IF Pos('h',command) <> 0 then
+   begin
+   Height := strtoint(Copy(command,Pos('=',command)+1,Length(command)-1));
+   Reffrm.top := Mainform.top + round((Mainform.height - Reffrm.height)/2);
+   Width := strtoint(FlashRefInfo.GetVariable('one'));
+   Reffrm.left := Mainform.left + round((Mainform.width - Reffrm.width)/2);
+   end;   }
+
+
+   if command = 'quit' then
+   close;
+
+    {  if command = 'pdf1' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth1), nil, nil, SW_SHOW);
+
+      if command = 'pdf2' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth2), nil, nil, SW_SHOW);
+
+      if command = 'pdf3' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth3), nil, nil, SW_SHOW);
+
+      if command = 'pdf4' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth4), nil, nil, SW_SHOW);
+            }
+
+   end;
+
+   
+procedure TReffrm.Image1MouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+begin
+IF AreWeDragging then
+begin
+Reffrm.left := Reffrm.left + (X - StartposX);
+Reffrm.Top := Reffrm.Top + (Y - StartposY);
+//Reffrm.left := Reffrm.left;
+//Reffrm.top := (Reffrm.top+Form1.height)-form2.height;
+end;
+end;
+
+procedure TReffrm.Image1MouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+AreWeDragging := False;
+end;
+
+
+procedure TReffrm.FormShow(Sender: TObject);
+begin
+if Mainform.enabled = true then
+mainformstate := true
+else
+mainformstate := false;
+
+Mainform.enabled := false;
+{FlashRefInfo.width := Reffrm.width;
+FlashRefInfo.height := Reffrm.height;
+FlashRefInfo.Refresh;
+FlashRefInfo.Repaint;  }
+ 
+end;
+
+procedure TReffrm.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+Mainform.enabled := mainformstate;
+end;
+
+procedure TReffrm.FlashRefInfoxMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+{StartPosX := X;
+StartPosY := Y;
+AreWeDragging := false;  }
+end;
+
+procedure TReffrm.FlashRefInfoxMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+begin
+{IF AreWeDragging then
+begin
+Reffrm.left := Reffrm.left + (X - StartposX);
+Reffrm.Top := Reffrm.Top + (Y - StartposY);
+end; }
+end;
+
+procedure TReffrm.FlashRefInfoxMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+//StartPosX := X;
+//StartPosY := Y;
+//AreWeDragging := True;
+end;
+
+procedure TReffrm.Image1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+StartPosX := X;
+StartPosY := Y;
+AreWeDragging := True;
+end;
+
+procedure TReffrm.FlashRefInfoxClick(Sender: TObject);
+begin
+showmessage('xx');
+end;
+
+procedure TReffrm.FlashRefInfoFSCommand(ASender: TObject; const command,
+  args: WideString);
+begin
+   if command = 'quit' then
+   close;
+
+    {  if command = 'pdf1' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth1), nil, nil, SW_SHOW);
+
+      if command = 'pdf2' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth2), nil, nil, SW_SHOW);
+
+      if command = 'pdf3' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth3), nil, nil, SW_SHOW);
+
+      if command = 'pdf4' then
+      ShellExecute(Handle, 'open', PChar(MainForm.PDFPAth4), nil, nil, SW_SHOW);
+            }
+
+  
+end;
+
+end.

@@ -1,0 +1,61 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  MType : Cardinal;
+  SmoothFonts : Cardinal;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+SystemParametersInfo(SPI_GETFONTSMOOTHING, 1, @SmoothFonts, 0);
+
+if SmoothFonts = 0 then
+begin
+SystemParametersInfo(SPI_SETFONTSMOOTHING, 1, @SmoothFonts, SPIF_SENDCHANGE);
+end;
+
+//SystemParametersInfo(spi_GetFontSmoothingType, 1, @MType, 0);
+
+
+MType :=  FE_FONTSMOOTHINGCLEARTYPE;
+SystemParametersInfo(spi_SetFontSmoothingType, 0, Pointer(MType), SPIF_SENDCHANGE);
+
+
+end;
+
+
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+SystemParametersInfo(SPI_GETFONTSMOOTHING, 1, @SmoothFonts, 0);
+
+
+if SmoothFonts = 1 then
+begin
+SystemParametersInfo(SPI_SETFONTSMOOTHING, 0, @SmoothFonts, SPIF_SENDCHANGE);
+end;
+
+end;
+
+end.

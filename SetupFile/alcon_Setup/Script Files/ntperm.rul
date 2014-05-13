@@ -1,0 +1,146 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// File Name: ntperm.rul
+//
+// Description: Function to set file, registry or printer permissions on NT
+//
+// Comments: #include this file's header file (ntperm.h) around the top of
+// Setup.rul (where the other header files are included) and
+// this file (ntperm.rul) at
+// the end.
+//
+// 
+//
+//
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//
+// Function: GrantFullAccess
+//
+// Purpose: Grants full access rights to files or registry keys to everyone
+//
+// Input: sObjectName - Path of a File a Registry Key or a Printer. Example: "MACHINE\Software\..."
+// Abkürzungen für Registry-Basisschlüssel sind "CLASSES_ROOT", "CURRENT_USER", "MACHINE" und "USERS"
+// nObjectType - File or Folder: SE_OBJECT_FILE
+// Printer: SE_PRINTER
+// Registry Key: SE_REGISTRY_KEY
+// bInherit - TRUE: Subfolders and subelements inherit the permissions
+// FALSE: No inheritance
+//
+// Output: Returnvalue = -1 - An error occured
+// 0 - No error
+//
+///////////////////////////////////////////////////////////////////////////////////////////
+function GrantFullAccess(sObjectName, nObjectType, bInherit)
+
+NUMBER nResult;
+POINTER pOldDACL, pNewDACL, pSD, pWorldSID;
+CHAR cWorldSIDBuffer(100); 
+EXPLICIT_ACCESS MyEA;
+SID_IDENTIFIER_AUTHORITY MySIDAuth;
+
+begin
+
+// Only on NT/2000/XP/2003...
+if !SYSINFO.WINNT.bWinNT then return -1; endif;
+
+// Get pointer to the DACL of the object
+nResult = GetNamedSecurityInfoA(sObjectName, nObjectType, DACL_SECURITY_INFORMATION, 0, 0, &pOldDACL, 0, &pSD);
+if nResult != 0 then return -1; endif;
+
+// Create an EXPLICIT_ACCESS structure
+
+// Create well known SID for world (everyone)
+MySIDAuth.Value1 = 0;
+MySIDAuth.Value2 = 0;
+MySIDAuth.Value3 = 0;
+MySIDAuth.Value4 = 0;
+MySIDAuth.Value5 = 0;
+MySIDAuth.Value6 = 1;
+pWorldSID = &cWorldSIDBuffer;
+nResult = AllocateAndInitializeSid(&MySIDAuth, 1,0,0,0,0,0,0,0,0,&pWorldSID);
+if nResult = 0 then return -1; endif;
+
+// Fill structure
+MyEA.grfAccessPermissions = GENERIC_ALL;
+MyEA.grfAccessMode = SET_ACCESS;
+MyEA.grfInheritance = SUB_CONTAINERS_AND_OBJECTS_INHERIT;
+MyEA.Trustee.pMultipleTrustee = 0;
+MyEA.Trustee.MultipleTrusteeOperation = NO_MULTIPLE_TRUSTEE;
+MyEA.Trustee.TrusteeForm = TRUSTEE_IS_SID;
+MyEA.Trustee.TrusteeType = TRUSTEE_IS_UNKNOWN;
+MyEA.Trustee.ptstrName = pWorldSID;
+
+// Create new ACL from old ACL applying EXPLICIT_ACCESS structure
+nResult = SetEntriesInAclA(1, &MyEA, pOldDACL, &pNewDACL);
+if nResult != 0 then LocalFree(pSD); return -1; endif;
+
+// Pass new ACL to object
+nResult = SetNamedSecurityInfoA(sObjectName, nObjectType, DACL_SECURITY_INFORMATION, 0, 0, pNewDACL, 0);
+if nResult != 0 then LocalFree(pSD); LocalFree(pNewDACL); return -1; endif;
+
+// Release Resources
+LocalFree(pSD);
+LocalFree(pNewDACL);
+
+return 0;
+
+end;
+
+///////////////////////////////////////////////////////////////////////////////////////////
+//
+// Function: GrantFullRegAccess
+//
+// Purpose: Grants full access rights for everyone to a registry key and all subkeys/subentries
+// This is an example of how to use GrantFullAccess
+//
+// Input: nBase - Base registry key. Valid values: HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_USERS
+// sRegKey - Registry key whose permissions should be changed. Example: "SOFTWARE\Microsoft\Windows" (Never use this one!!)
+//
+// Output: Return value = -1 - An error occured
+// 0 - No error
+//
+///////////////////////////////////////////////////////////////////////////////////////////
+function GrantFullRegAccess(nBase, sRegKey)
+
+LIST listSubKeys;
+NUMBER nResult;
+STRING sTmp, sRegSubKey, sBase;
+
+begin
+
+// ----- Get string value for base key -----
+
+switch (nBase)
+case HKEY_LOCAL_MACHINE: sBase = "MACHINE";
+case HKEY_CURRENT_USER: sBase = "CURRENT_USER";
+case HKEY_CLASSES_ROOT: sBase = "CLASSES_ROOT";
+case HKEY_USERS: sBase = "USERS";
+default: return -1;
+endswitch;
+
+if RegDBSetDefaultRoot(nBase) < 0 then return -1; endif;
+
+// ----- Change permissions on this key -----
+
+sTmp = sBase + "\\" + sRegKey;
+if GrantFullAccess(sTmp, SE_REGISTRY_KEY, TRUE) < 0 then return -1; endif;
+
+// ----- Create a list of all Subkeys and move through it -----
+
+listSubKeys = ListCreate(STRINGLIST);
+if RegDBQueryKey(sRegKey ,REGDB_KEYS ,listSubKeys) >= 0 then
+nResult = ListGetFirstString(listSubKeys, sRegSubKey);
+while (nResult != END_OF_LIST)
+// Change permissions on subkey (recursive call of GrantFullRegAccess!)
+sTmp = sRegKey + "\\" + sRegSubKey;
+if GrantFullRegAccess(nBase, sTmp) < 0 then return -1; endif;
+nResult = ListGetNextString(listSubKeys, sRegSubKey);
+endwhile;
+endif;
+ListDestroy(listSubKeys);
+
+return 0;
+
+end;

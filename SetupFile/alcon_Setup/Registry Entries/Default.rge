@@ -1,0 +1,252 @@
+[General]
+Type=REGISTRYDATA
+Version=2.10.000
+
+[Data]
+Set0=<Default>
+Set1=RegistrySetx86
+Set2=RegistrySet
+Set3=Office2010Security
+
+[<Default>]
+---Comment---=
+---FileGroup0---=
+---Default---=Yes
+
+[RegistrySetx86]
+---Comment---=
+---FileGroup0---=
+HKLM0=Software
+HKLM1=Software\Microsoft
+HKLM2=Software\Microsoft\Windows
+HKLM3=Software\Microsoft\Windows\CurrentVersion
+HKLM4=Software\Microsoft\Windows\CurrentVersion\Run
+
+[RegistrySetx86:HKLM:Software]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySetx86:HKLM:Software\Microsoft]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySetx86:HKLM:Software\Microsoft\Windows]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySetx86:HKLM:Software\Microsoft\Windows\CurrentVersion]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySetx86:HKLM:Software\Microsoft\Windows\CurrentVersion\Run]
+---Shared---=No
+---Comment---=
+Abacus Auto Updater x86=S,<Program_Files>  (x86)\Abacus\AutoUpdate\AbacusAutoUp.exe
+(Default)=S,
+Abacus Auto Updater=S,
+
+[RegistrySet]
+---Comment---=
+---FileGroup0---=
+HKLM0=Software
+HKLM1=Software\Microsoft
+HKLM2=Software\Microsoft\Windows
+HKLM3=Software\Microsoft\Windows\CurrentVersion
+HKLM4=Software\Microsoft\Windows\CurrentVersion\Run
+
+[RegistrySet:HKLM:Software]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySet:HKLM:Software\Microsoft]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySet:HKLM:Software\Microsoft\Windows]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySet:HKLM:Software\Microsoft\Windows\CurrentVersion]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[RegistrySet:HKLM:Software\Microsoft\Windows\CurrentVersion\Run]
+---Shared---=No
+---Comment---=
+Abacus Auto Updater=S,<Program_Files>\Abacus\AutoUpdate\AbacusAutoUp.exe
+(Default)=S,
+Abacus Auto Updater x86=S,
+
+[Office2010Security]
+---Comment---=
+---FileGroup0---=ComDocsNewerVerDate
+---FileGroup1---=ProgramfilesNewerVerDate
+HKLM0=Software
+HKLM1=Software\Microsoft
+HKLM2=Software\Microsoft\Office
+HKLM3=Software\Microsoft\Office\14.0
+HKLM4=Software\Microsoft\Office\14.0\Excel
+HKLM5=Software\Microsoft\Office\14.0\Excel\Security
+HKLM6=Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations
+HKLM7=Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations\Abacus
+HKLM8=Software\Microsoft\Office\14.0\Word
+HKLM9=Software\Microsoft\Office\14.0\Word\Security
+HKLM10=Software\Microsoft\Office\14.0\Word\Security\Trusted Locations
+HKLM11=Software\Microsoft\Office\14.0\Word\Security\Trusted Locations\Abacus
+HKCU0=Software
+HKCU1=Software\Microsoft
+HKCU2=Software\Microsoft\Office
+HKCU3=Software\Microsoft\Office\14.0
+HKCU4=Software\Microsoft\Office\14.0\Excel
+HKCU5=Software\Microsoft\Office\14.0\Excel\Security
+HKCU6=Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations
+HKCU7=Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations\Abacus
+HKCU8=Software\Microsoft\Office\14.0\Word
+HKCU9=Software\Microsoft\Office\14.0\Word\Security
+HKCU10=Software\Microsoft\Office\14.0\Word\Security\Trusted Locations
+HKCU11=Software\Microsoft\Office\14.0\Word\Security\Trusted Locations\Abacus
+
+[Office2010Security:HKLM:Software]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Excel]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Excel\Security]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations\Abacus]
+---Shared---=No
+---Comment---=
+Path=S,<ComDocDir>\Abacus
+Description=S,Abacus Trusted Location
+Date=S,10/03/2011
+AllowSubfolders=N,1
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Word]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Word\Security]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Word\Security\Trusted Locations]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKLM:Software\Microsoft\Office\14.0\Word\Security\Trusted Locations\Abacus]
+---Shared---=No
+---Comment---=
+Path=S,<ComDocDir>\Abacus
+Description=S,Abacus Trusted Location
+Date=S,10/03/2011
+AllowSubfolders=N,1
+(Default)=S,
+
+[Office2010Security:HKCU:Software]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Excel]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Excel\Security]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations\Abacus]
+---Shared---=No
+---Comment---=
+Path=S,<ComDocDir>\Abacus
+Description=S,Abacus Trusted Location
+Date=S,10/03/2011
+AllowSubfolders=N,1
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Word]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Word\Security]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Word\Security\Trusted Locations]
+---Shared---=No
+---Comment---=
+(Default)=S,
+
+[Office2010Security:HKCU:Software\Microsoft\Office\14.0\Word\Security\Trusted Locations\Abacus]
+---Shared---=No
+---Comment---=
+Path=S,<ComDocDir>\Abacus
+Description=S,Abacus Trusted Location
+Date=S,10/03/2011
+AllowSubfolders=N,1
+(Default)=S,
+

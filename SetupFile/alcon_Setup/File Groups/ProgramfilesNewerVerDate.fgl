@@ -1,0 +1,178 @@
+[General]
+Type=FILELIST
+Version=1.10.000
+
+[TopDir]
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\AbacusP.aba
+SubDir0=AutoUpdate
+SubDir1=Template
+
+[AutoUpdate]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\AbacusModelTracking\Delphi\UploderSetupSourceFiles\AutoUpdate
+file0=\\abacusint.local\data\Public\AIProjects\AbacusModelTracking\Delphi\UploderSetupSourceFiles\AutoUpdate\AbacusAutoUp.exe
+SubDir0=AutoUpdate\System
+
+[AutoUpdate\System]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\AbacusModelTracking\Delphi\UploderSetupSourceFiles\AutoUpdate\System
+file0=\\abacusint.local\data\Public\AIProjects\AbacusModelTracking\Delphi\UploderSetupSourceFiles\AutoUpdate\System\AbacusAutoUp.rec
+file1=\\abacusint.local\data\Public\AIProjects\AbacusModelTracking\Delphi\UploderSetupSourceFiles\AutoUpdate\System\ABA_ICON_COL_SB.ico
+file2=\\abacusint.local\data\Public\AIProjects\AbacusModelTracking\Delphi\UploderSetupSourceFiles\AutoUpdate\System\ABA_ICON_GREY_SB.ico
+file3=\\abacusint.local\data\Public\AIProjects\AbacusModelTracking\Delphi\UploderSetupSourceFiles\AutoUpdate\System\Log.txt
+
+[Template]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Readme.txt
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Template.exe
+SubDir0=Template\Animation
+SubDir1=Template\Images
+SubDir2=Template\System
+
+[Template\Animation]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\ABA_SPLASH.swf
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\ABOUT.swf
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\BTN_Info.swf
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\BTN_REF.swf
+file4=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\CHART_GUIDE.txt
+file5=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\INTRO.swf
+file6=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MASTER_BTN.swf
+file7=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MASTER_BTN_GUIDE.txt
+file8=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MASTER_CHART.swf
+file9=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MASTER_CLOSE.swf
+file10=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MASTER_CLOSE_GUIDE.txt
+file11=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MASTER_SPLASH_GUIDE.txt
+file12=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MASTER_TABLE.swf
+file13=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MENU_BOTTOM.swf
+file14=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MENU_LHS.swf
+file15=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\MENU_TOP.swf
+file16=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\PRE_GENERATING.swf
+file17=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\PRE_LOADING.swf
+file18=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\PRE_SAVEOPENRESET.swf
+file19=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\REF.swf
+file20=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\Shortcut to Animation.lnk
+file21=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\TABLE.swf
+file22=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\TEMP_INTRO.swf
+file23=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Animation\title.swf
+
+[Template\Images]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\About.ico
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\App.ico
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Thumbs.db
+SubDir0=Template\Images\about
+SubDir1=Template\Images\Buttons
+SubDir2=Template\Images\Misc
+SubDir3=Template\Images\PopButtons
+SubDir4=Template\Images\Screens
+SubDir5=Template\Images\table
+SubDir6=Template\Images\Titles
+
+[Template\Images\about]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\about
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\about\abt-ABACUS.jpg
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\about\abt-demogfx.jpg
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\about\abt-model.jpg
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\about\Thumbs.db
+
+[Template\Images\Buttons]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\BackDown.bmp
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\BackOver.bmp
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\BackUp.bmp
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\navPad.jpg
+file4=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\nextDown.bmp
+file5=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\nextOver.bmp
+file6=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\nextUp.bmp
+file7=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\refDOWN.bmp
+file8=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\refOver.bmp
+file9=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\refUP.bmp
+file10=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\StartDown.bmp
+file11=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\StartOver.bmp
+file12=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\StartUp.bmp
+file13=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\Thumbs.db
+SubDir0=Template\Images\Buttons\Sidebar
+
+[Template\Images\Buttons\Sidebar]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\Sidebar
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\Sidebar\down.bmp
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\Sidebar\Thumbs.db
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Buttons\Sidebar\up.bmp
+
+[Template\Images\Misc]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Misc
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Misc\bulletLrg.bmp
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Misc\bulletSml.bmp
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Misc\Thumbs.db
+
+[Template\Images\PopButtons]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\AddUp.bmp
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\applyUp.bmp
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\cancelUp.bmp
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\ClearUp.bmp
+file4=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\CloseUp.bmp
+file5=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\ResetPopUp.bmp
+file6=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\SelectAllHaUp.bmp
+file7=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\SelectAllPCOUp.bmp
+file8=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\SelectAllRegUp.bmp
+file9=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\SubtractUp.bmp
+file10=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\PopButtons\Thumbs.db
+
+[Template\Images\Screens]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\about.jpg
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\Save-Open.jpg
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\splash-screen.jpg
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\Thumbs.db
+SubDir0=Template\Images\Screens\1024x768
+
+[Template\Images\Screens\1024x768]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\1024x768
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\1024x768\generic-screen.jpg
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\1024x768\Logo.jpg
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\1024x768\Thumbs.db
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Screens\1024x768\title-screen.jpg
+
+[Template\Images\table]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Thumbs.db
+SubDir0=Template\Images\table\Template1
+
+[Template\Images\table\Template1]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\BodyColour.jpg
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\BorderColour.jpg
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\BottomBar.jpg
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\BottomElementOfLeftBorder.jpg
+file4=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\BottomLeftCorner.jpg
+file5=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\BottomRightCorner.jpg
+file6=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\ColouredBottomLeftCorner.jpg
+file7=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\ColouredBottomRightCorner.jpg
+file8=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\ColouredTopLeftCorner.jpg
+file9=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\ColouredTopRightCorner.jpg
+file10=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\LeftBar.jpg
+file11=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\LeftElementOfTopBorder.jpg
+file12=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\RightBar.jpg
+file13=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\RightElementOfTopBorder.jpg
+file14=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\Thumbs.db
+file15=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\TopBar.jpg
+file16=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\TopElementOfLeftBorder.jpg
+file17=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\TopLeftCorner copy.jpg
+file18=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\TopLeftCorner.jpg
+file19=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\table\Template1\TopRightCorner.jpg
+
+[Template\Images\Titles]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\Images\Titles
+
+[Template\System]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\Flash9b.ocx
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\language.mdb
+file2=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\PI.rtf
+file3=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\Ref.rtf
+file4=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\Smooth.exe
+file5=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\Smoothold.exe
+file6=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\Splash.exe
+file7=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\Splash.exe.lnk
+file8=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\Template\System\Startup.ini
+

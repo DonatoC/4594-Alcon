@@ -1,0 +1,33 @@
+unit About;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls, jpeg,shellapi, SpFormatLabelUnit;
+
+type
+  TAboutbox = class(TForm)
+    imgAbout: TImage;
+    lblClient: TSpFormatLabel;
+    lblProjectName: TSpFormatLabel;
+    lblVersionNo: TSpFormatLabel;
+    lblLaunchDate: TSpFormatLabel;
+    lblProjectManager: TSpFormatLabel;
+    lblProgrammer: TSpFormatLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Aboutbox: TAboutbox;
+
+implementation
+
+{$R *.DFM}
+uses functions, unit1;
+
+
+end.

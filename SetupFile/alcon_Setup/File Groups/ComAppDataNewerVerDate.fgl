@@ -1,0 +1,18 @@
+[General]
+Type=FILELIST
+Version=1.10.000
+
+[TopDir]
+SubDir0=Abacus
+
+[Abacus]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComAppData\Abacus
+SubDir0=Abacus\Template
+
+[Abacus\Template]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComAppData\Abacus\Template
+SubDir0=Abacus\Template\System
+
+[Abacus\Template\System]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComAppData\Abacus\Template\System
+

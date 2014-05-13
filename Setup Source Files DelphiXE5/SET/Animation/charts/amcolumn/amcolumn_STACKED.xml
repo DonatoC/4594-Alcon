@@ -1,0 +1,130 @@
+<settings>
+  <text_size>12</text_size>
+  <data_type>csv</data_type>
+  <thousands_separator>,</thousands_separator>
+  <decimals_separator>.</decimals_separator>
+  <background>
+    <alpha>100</alpha>
+    <border_color>FF00FF</border_color>
+  </background>
+  <plot_area>
+    <margins>
+      <left>100</left>
+      <right>35</right>
+      <top>80</top>
+      <bottom>200</bottom>
+    </margins>
+  </plot_area>
+  <grid>
+    <category>
+      <alpha>5</alpha>
+      <dashed>1</dashed>
+    </category>
+    <value>
+      <alpha>5</alpha>
+      <dashed>1</dashed>
+    </value>
+  </grid>
+  <axes>
+    <category>
+      <tick_length>4</tick_length>
+      <width>0</width>
+      <color>999999</color>
+    </category>
+    <value>
+      <tick_length>4</tick_length>
+      <width>0</width>
+      <color>999999</color>
+    </value>
+  </axes>
+  <values>
+    <category>
+      <color>696969</color>
+    </category>
+    <value>
+      <color>696969</color>
+      <min>0</min>
+      <skip_first>0</skip_first>
+      <unit>%</unit>
+    </value>
+  </values>
+  <balloon>
+    <color>9E7C60</color>
+    <alpha>90</alpha>
+    <text_color>FEE5AC</text_color>
+    <border_width>1</border_width>
+    <border_color>FEE5AC</border_color>
+  </balloon>
+  <legend>
+    <x>10%</x>
+    <y>83%</y>
+    <text_size>18</text_size>
+    <spacing>0</spacing>
+    <key>
+      <size>15</size>
+    </key>
+  </legend>
+  <column>
+    <type>stacked</type>
+    <width>77</width>
+    <spacing>1</spacing>
+    <border_color>666666</border_color>
+    <hover_brightness>20</hover_brightness>
+    <balloon_text>{title}: £{value}</balloon_text>
+    <data_labels>{value} %</data_labels>
+    <data_labels_text_color>FFFFFF</data_labels_text_color>
+    <data_labels_text_size>14</data_labels_text_size>
+    <data_labels_position>above</data_labels_position>
+    <grow_time>1</grow_time>
+    <grow_effect>regular</grow_effect>
+    <sequenced_grow>1</sequenced_grow>
+  </column>
+  <depth>15</depth>
+  <angle>0</angle>
+  <line>
+    <bullet_size>5</bullet_size>
+  </line>
+  <graphs>
+    <graph gid="0">
+      <title>Not applicable</title>
+      <color>E58F36</color>
+    </graph>
+    <graph gid="1">
+      <title>Watchful waiting / No treatment</title>
+      <color>2981AB</color>
+    </graph>
+    <graph gid="2">
+      <title>Vitrectomy Surgery for VMT</title>
+      <color>C4D542</color>
+    </graph>
+    <graph gid="3">
+      <title>Vitrectomy surgery for MH</title>
+      <color>707070</color>
+    </graph>
+    <graph gid="4">
+      <title>Cataract Surgery</title>
+      <color>C18138</color>
+    </graph>
+    <graph gid="5">
+      <title>Ocriplasmin intravitreal injection</title>
+      <color>2D8699</color>
+    </graph>
+  </graphs>
+  <labels>
+    <label lid="0">
+      <text>Slide title</text>
+      <x>0%</x>
+      <y>2%</y>
+      <text_color>2981AB</text_color>
+      <text_size>32</text_size>
+      <align>center</align>
+    </label>
+    <label lid="1">
+      <text>Proportion of eyes treated</text>
+      <x>5%</x>
+      <y>50%</y>
+      <text_size>12</text_size>
+      <rotate>1</rotate>
+    </label>
+  </labels>
+</settings>

@@ -1,0 +1,15 @@
+[General]
+Type=FILELIST
+Version=1.10.000
+
+[TopDir]
+SubDir0=Abacus
+
+[Abacus]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Allergan\BoTox Adult Spastcity_1670\I.T\Setup Source Files\ComAppData\Abacus
+SubDir0=Abacus\Data
+
+[Abacus\Data]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Allergan\BoTox Adult Spastcity_1670\I.T\Setup Source Files\ComAppData\Abacus\Data
+file0=\\abacusint.local\data\Public\AIProjects\Allergan\BoTox Adult Spastcity_1670\I.T\Setup Source Files\ComAppData\Abacus\Data\local.mdb
+

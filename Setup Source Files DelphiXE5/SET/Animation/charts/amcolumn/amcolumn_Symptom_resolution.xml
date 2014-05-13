@@ -1,0 +1,75 @@
+<settings>
+  <data_type>csv</data_type>
+  <decimals_separator>.</decimals_separator>
+  <background>
+    <alpha>100</alpha>
+    <border_alpha>20</border_alpha>
+  </background>
+  <grid>
+    <category>
+      <dashed>1</dashed>
+    </category>
+    <value>
+      <dashed>1</dashed>
+    </value>
+  </grid>
+  <axes>
+    <category>
+      <width>1</width>
+      <color>E7E7E7</color>
+    </category>
+    <value>
+      <width>1</width>
+      <color>E7E7E7</color>
+    </value>
+  </axes>
+  <values>
+    <value>
+      <min>0</min>
+    </value>
+  </values>
+  <legend>
+    <max_columns>2</max_columns>
+  </legend>
+  <depth>15</depth>
+  <column>
+    <width>85</width>
+    <balloon_text>{title}: {value} downloads</balloon_text>
+    <data_labels>{value}</data_labels>
+    <data_labels_text_color>FFFFFF</data_labels_text_color>
+    <data_labels_text_size>22</data_labels_text_size>
+    <data_labels_position>inside</data_labels_position>
+    <grow_effect>regular</grow_effect>
+  </column>
+  <graphs>
+    <graph gid="0">
+      <title>Proportion of symptoms Resolved:</title>
+      <color>E58F36</color>
+    </graph>
+    <graph gid="1">
+      <title>Proportion of symptoms Better:</title>
+      <color>2981AB</color>
+    </graph>
+    <graph gid="2">
+      <title>Proportion of symptoms Same or worse at subsequent visits: Watchful waiting:</title>
+      <color>C4D542</color>
+    </graph>
+    <graph gid="3">
+      <title>Proportion of symptoms Same or worse at subsequent visits: surgery :</title>
+      <color>707070</color>
+    </graph>
+    <graph gid="4">
+      <title>Proportion of symptoms Same or worse at subsequent visits: intravitreal injection:</title>
+      <color>C18138</color>
+    </graph>
+  </graphs>
+  <labels>
+    <label lid="0">
+      <text><![CDATA[<b>Visit frequency: Average number of visit between initial visit and discharge</b>]]></text>
+      <y>18</y>
+      <text_color>2981AB</text_color>
+      <text_size>13</text_size>
+      <align>center</align>
+    </label>
+  </labels>
+</settings>

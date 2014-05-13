@@ -1,0 +1,85 @@
+<settings>
+<data_type>csv</data_type>
+<decimals_separator>.</decimals_separator>
+  <background>
+    <alpha>100</alpha>
+    <border_alpha>20</border_alpha>
+  </background>
+  <grid>
+    <category>
+      <dashed>1</dashed>
+    </category>
+    <value>
+      <dashed>1</dashed>
+    </value>
+  </grid>
+  <axes>
+    <category>
+      <width>1</width>
+      <color>E7E7E7</color>
+    </category>
+    <value>
+      <width>1</width>
+      <color>E7E7E7</color>
+    </value>
+  </axes>
+  <values>
+    <value>
+      <min>0</min>
+      <unit>%</unit>
+    </value>
+  </values>
+  <depth>15</depth>
+  <legend>
+    <color>FF0000</color>
+    <text_size>18</text_size>
+  </legend>
+  <column>
+    <width>85</width>
+    <balloon_text>{title}: {value} downloads</balloon_text>
+    <data_labels>{value} %</data_labels>
+    <data_labels_text_color>FFFFFF</data_labels_text_color>
+    <data_labels_text_size>18</data_labels_text_size>
+    <data_labels_position>above</data_labels_position>
+  </column>
+  <graphs>
+    <graph gid="0">
+      <title>Not applicable:</title>
+      <color>E58F36</color>
+    </graph>
+    <graph gid="1">
+      <title>Complete resolution:</title>
+      <color>2981AB</color>
+    </graph>
+    <graph gid="2">
+      <title>Macular Hole closure:</title>
+      <color>C4D542</color>
+    </graph>
+    <graph gid="3">
+      <title>Patient decision for no further treatment / follow up:</title>
+      <color>707070</color>
+    </graph>
+    <graph gid="4">
+      <title>Poor prognosis:</title>
+      <color>C18138</color>
+    </graph>
+    <graph gid="5">
+      <title>Other:</title>
+      <color>2D8699</color>
+    </graph>
+  </graphs>
+  <labels>
+    <label lid="0">
+      <text>This is the slide title</text>
+      <text_color>2981AB</text_color>
+      <text_size>32</text_size>
+      <align>center</align>
+    </label>
+    <label lid="1">
+      <text>Proportion of eyes</text>
+      <y>50%</y>
+      <text_size>12</text_size>
+      <rotate>1</rotate>
+    </label>
+  </labels>
+</settings>

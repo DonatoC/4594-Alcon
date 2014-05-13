@@ -1,0 +1,111 @@
+<settings>
+  <hide_bullets_count>18</hide_bullets_count>
+  <connect>1</connect>
+  <data_type>csv</data_type>
+  <decimals_separator>.</decimals_separator>
+  <background>
+    <alpha>90</alpha>
+    <border_alpha>10</border_alpha>
+  </background>
+  <plot_area>
+    <margins>
+      <left>50</left>
+      <right>40</right>
+      <bottom>100</bottom>
+    </margins>
+  </plot_area>
+  <grid>
+    <x>
+      <alpha>10</alpha>
+      <approx_count>9</approx_count>
+    </x>
+    <y_left>
+      <alpha>10</alpha>
+    </y_left>
+  </grid>
+  <axes>
+    <x>
+      <width>1</width>
+      <color>0D8ECF</color>
+    </x>
+    <y_left>
+      <width>1</width>
+      <color>0D8ECF</color>
+    </y_left>
+  </axes>
+  <values>
+    <y_left>
+    <unit>%</unit>
+    </y_left>
+  </values>
+  <indicator>
+    <color>0D8ECF</color>
+    <x_balloon_text_color>FFFFFF</x_balloon_text_color>
+    <line_alpha>50</line_alpha>
+    <selection_color>0D8ECF</selection_color>
+    <selection_alpha>20</selection_alpha>
+  </indicator>
+  <balloon>
+    <on_off>0</on_off>
+  </balloon>
+  <legend>
+    <graph_on_off>0</graph_on_off>
+    <y>95%</y>
+    <width>100%</width>
+    <text_size>18</text_size>
+  </legend>
+  <zoom_out_button>
+    <text_color_hover>FF0F00</text_color_hover>
+  </zoom_out_button>
+  <help>
+    <button>
+      <color>FFFFFF</color>
+      <alpha>0</alpha>
+      <text_color>000000</text_color>
+      <text_color_hover>FF0F00</text_color_hover>
+    </button>
+    <balloon>
+      <color>FFFFFF</color>
+      <text_color>000000</text_color>
+    </balloon>
+  </help>
+  <graphs>
+    <graph gid="0">
+      <title>Ocriplasmin intravitreal injection</title>
+      <color>E58F36</color>
+      <color_hover>FF0000</color_hover>
+      <data_labels>{value}</data_labels>
+    </graph>
+    <graph gid="1">
+      <title>Watchful waiting / No treatment</title>
+      <color>C4D542</color>
+      <color_hover>339900</color_hover>
+      <data_labels>{value}</data_labels>
+    </graph>
+    <graph gid="2">
+      <title>Surgery</title>
+      <color>2981AB</color>
+      <color_hover>0000FF</color_hover>
+      <data_labels>{value}</data_labels>
+    </graph>
+  </graphs>
+  <labels>
+    <label lid="0">
+      <text><![CDATA[<b>Comorbidities: - Frequency</b>]]></text>
+      <text_color>2981AB</text_color>
+      <text_size>32</text_size>
+      <align>center</align>
+    </label>
+    <label lid="1">
+      <text>Proportion of eyes with secondary cataract</text>
+      <x>0%</x>
+      <y>50%</y>
+      <rotate>1</rotate>
+    </label>
+    <label lid="2">
+      <text>Time since initial visit (Months)</text>
+      <x>45%</x>
+      <y>90%</y>
+    </label>
+  </labels>
+</settings>

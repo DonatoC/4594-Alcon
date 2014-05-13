@@ -1,0 +1,76 @@
+unit newAboutUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  FlashPlayerControl, StdCtrls;
+
+type
+  TfrmNewAbout = class(TForm)
+    FlashPlayerControl1: TTransparentFlashPlayerControl;
+    procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FlashPlayerControl1FSCommand(ASender: TObject; const command,
+      args: WideString);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmNewAbout: TfrmNewAbout;
+
+implementation
+
+uses Unit1, About;
+
+{$R *.DFM}
+
+procedure TfrmNewAbout.FormShow(Sender: TObject);
+VAR functionText : string;
+begin
+
+
+  functionText := '<invoke name="callPanel" returntype="xml"><arguments><string>About this model</string>';
+  functionText := functionText + '<string>'+Aboutbox.lblClient.Caption+'&lt;br&gt;&lt;br&gt;';
+  functionText := functionText +Aboutbox.lblProjectName.Caption+'&lt;br&gt;&lt;br&gt;';
+  functionText := functionText +Aboutbox.lblVersionNo.Caption+'&lt;br&gt;&lt;br&gt;';
+  functionText := functionText +Aboutbox.lblLaunchDate.Caption+'&lt;br&gt;&lt;br&gt;';
+  functionText := functionText +Aboutbox.lblProjectManager.Caption+'&lt;br&gt;&lt;br&gt;';
+  functionText := functionText +Aboutbox.lblProgrammer.Caption+'</string></arguments></invoke>';
+  //showmessage(functionText);
+  FlashPlayerControl1.CallFunction(functiontext);
+
+end;
+
+procedure TfrmNewAbout.FormCreate(Sender: TObject);
+begin
+//showmessage(mainform.AppPath + 'Animation\ALK_ABOUT.swf');
+
+FlashPlayerControl1.Movie := DataModule2.AppPath + 'Animation\ABOUT.swf';
+//showmessage(FlashPlayerControl1.Movie);
+frmNewAbout.width := mainform.Width;
+frmNewAbout.height := mainform.height;
+frmNewAbout.top := mainform.top;
+frmNewAbout.left := mainform.left;
+end;
+
+procedure TfrmNewAbout.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+action:= caFree;
+end;
+
+procedure TfrmNewAbout.FlashPlayerControl1FSCommand(ASender: TObject;
+  const command, args: WideString);
+begin
+  if command = 'close' then
+    begin
+       close;
+    end;
+end;
+
+end.

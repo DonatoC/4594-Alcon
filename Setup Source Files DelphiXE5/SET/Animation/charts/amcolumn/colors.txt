@@ -1,0 +1,58 @@
+
+ALCON Colors
+{
+	1. #F29A67 - peach
+	2. #4690C7 - navy
+	3. #F29542 - orange
+	4. #67A4D1 - blue
+	5. #FDEB6B - yellow
+	6. #4FB8D4 - blue2
+	7. #D1D84E - Green
+	8. #9EB7BD - greyish/blue
+	9. #7FC077 - Green 2
+}
+
+Hexa Colors
+{
+	10. #f2bd67 - pale/orange/peach
+	11. #81b3d9 - pale blue
+	12. #a0510b - orange/brown tint
+	13. #678ad1 - another blue
+	14. #b877c0 - purple
+
+
+
+
+
+}
+
+
+
+
+ALCON Colors Pies
+{
+	1. #F29A67 - peach
+	2. #4690C7 - navy
+	6. #F29542 - orange
+	5. #67A4D1 - blue
+	4. #FDEB6B - yellow
+	7. #4FB8D4 - blue2
+	3. #D1D84E - Green
+	8. #9EB7BD - greyish/blue
+	9. #7FC077 - Green 2
+}
+
+Hexa Colors
+{
+	10. #f2bd67 - pale/orange/peach
+	11. #81b3d9 - pale blue
+	12. #a0510b - orange/brown tint
+	13. #678ad1 - another blue
+	14. #b877c0 - purple
+
+
+
+
+
+}
+

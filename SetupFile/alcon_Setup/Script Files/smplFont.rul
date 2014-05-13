@@ -1,0 +1,59 @@
+ 
+//--------------------------------------------------------
+// InstallFont Function
+//
+// The InstallFont Function will Install and Register
+// a Font from the Source of your setup  
+// (Setup Files, Advanced Files, Disk 1), into the 
+// Windows-Fonts directory.  
+//--------------------------------------------------------
+function int InstallFont( szFont, szFontDesc)    
+begin
+	VarSave(SRCTARGETDIR);     	
+	szFontDir = WINDIR^"Fonts"; 
+	TARGETDIR=szFontDir;
+	szFontFile = szFontDir^szFont;
+	szFontBackup= szFontDir^szFont;
+	
+	//---------------------------------------------------------------------------
+	//  Make Font Entries in Registry
+	//---------------------------------------------------------------------------
+		szKey = "SOFTWARE\\MICROSOFT\\WINDOWS";
+		
+		// On Windows NT based systems the fonts key is under the 'WINDOWS NT' key
+		if SYSINFO.WINNT.bWinNT  then
+		    szKey = szKey+ " NT";
+		endif;        
+		
+		szKey = szKey +"\\CurrentVersion\\Fonts";
+		nvType =REGDB_STRING;
+		RegDBSetDefaultRoot ( HKEY_LOCAL_MACHINE );
+		RegDBSetKeyValueEx ( szKey , szFontDesc , REGDB_STRING , szFontFile , -1 );
+	 
+	//---------------------------------------------------------------------------
+	// If the font is already in the system, create a backup	                   
+	//---------------------------------------------------------------------------
+		nResult = FindFile(szFontDir, szFont, szResult);  
+		if nResult = 0 then
+			VarSave(SRCTARGETDIR);
+		    SRCDIR=TARGETDIR;
+		    DeleteFile(szFont + ".BAK");
+		    RenameFile(szFont, szFont + ".BAK");
+		    VarRestore(SRCTARGETDIR);
+		endif;
+	 
+	//---------------------------------------------------------------------------
+	// Copy the font into the system from the SourceDirectory                      
+	//---------------------------------------------------------------------------
+	if CopyFile(szFont, szFont) < 0 then
+		MessageBox( "Error while copying File from Source!",SEVERE);
+	endif; 
+	
+	//---------------------------------------------------------------------------
+	// Register font in system                       
+	//---------------------------------------------------------------------------    
+	nResult = AddFontResource(szFontFile);
+	SendMessage(HWND_BROADCAST,WM_FONTCHANGE,0,0);
+	VarRestore(SRCTARGETDIR); 
+	return nResult;
+end;

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009/10/27 11:04:58.302.dproj,\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\Template.dproj=\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\Template.dproj</Transaction>
+    <Transaction>2009/10/27 11:10:31.791.dproj,\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\Template.dproj=\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\Template.dproj</Transaction>
+    <Transaction>2009/10/27 11:45:37.490.pas,\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\Unit2.pas=\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\UtilitiesUnit.pas</Transaction>
+    <Transaction>2009/10/27 11:45:37.490.dfm,\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\Unit2.dfm=\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009\UtilitiesUnit.dfm</Transaction>
+    <Transaction>2010/09/10 10:06:50.442.pas,\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009 EXCEL\UsrDefPopulation.pas=</Transaction>
+    <Transaction>2010/09/10 10:06:50.458.dfm,\\abacusint.local\data\Public\AIProjects\Templates\I.T\ProjectFiles Delphi2009 EXCEL\UsrDefPopulation.dfm=</Transaction>
+  </Transactions>
+</BorlandProject>

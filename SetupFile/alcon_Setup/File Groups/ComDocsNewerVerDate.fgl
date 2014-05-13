@@ -1,0 +1,24 @@
+[General]
+Type=FILELIST
+Version=1.10.000
+
+[TopDir]
+SubDir0=Abacus
+
+[Abacus]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComMyDocs\Abacus
+SubDir0=Abacus\Template
+
+[Abacus\Template]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComMyDocs\Abacus\Template
+SubDir0=Abacus\Template\Saves
+SubDir1=Abacus\Template\Report
+
+[Abacus\Template\Saves]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComMyDocs\Abacus\Template\Saves
+file0=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComMyDocs\Abacus\Template\Saves\AppIni.ini
+file1=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComMyDocs\Abacus\Template\Saves\Default.tmp
+
+[Abacus\Template\Report]
+fulldirectory=\\abacusint.local\data\Public\AIProjects\Templates\I.T\Setup Source Files\Template D2009\ComMyDocs\Abacus\Template\Report
+

@@ -1,0 +1,69 @@
+unit PopUpUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls, CustomESpLabelUnit, Functions;
+
+type
+  TfrmPopUp = class(TForm)
+    Shape2: TShape;
+    Title: TSpFormatLabel;
+    Shape1: TShape;
+    btnClose: TSpFormatLabel;
+    Drag: TImage;
+    procedure DragMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure DragMouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
+    procedure DragMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure btnCloseClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPopUp: TfrmPopUp;
+  AreWeDragging : Boolean;
+  StartPosX, StartPosY : integer;
+
+implementation
+
+uses DataModuleUnit2, Unit1;
+
+{$R *.DFM}
+
+procedure TfrmPopUp.DragMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  StartPosX := X;
+  StartPosY := Y;
+  AreWeDragging := True;
+end;
+
+procedure TfrmPopUp.DragMouseMove(Sender: TObject;
+  Shift: TShiftState; X, Y: Integer);
+begin
+  if AreWeDragging then
+    begin
+      Self.Left := Self.Left + (X - StartposX);
+      Self.Top := Self.Top + (Y - StartposY);
+    end;
+end;
+
+procedure TfrmPopUp.DragMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  AreWeDragging := False;
+end;
+
+procedure TfrmPopUp.btnCloseClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

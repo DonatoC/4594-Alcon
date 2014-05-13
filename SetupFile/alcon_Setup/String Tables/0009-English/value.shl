@@ -1,0 +1,16 @@
+[General]
+Type=STRINGTABLESPECIFIC
+Version=1.00.000
+Language=0009
+
+[Data]
+TITLE_MAIN=Abacus
+TITLE_CAPTIONBAR=Abacus
+COMPANY_NAME=Abacus International
+PRODUCT_NAME=Abacus
+PRODUCT_KEY=Abacus
+PRODUCT_VERSION=1.2.11
+FOLDER_NAME=Abacus
+ShortCut_Text=Abacus
+<Program_Files>=
+

@@ -1,0 +1,67 @@
+<settings>
+    <pie>
+        <colors>E58F36,2981AB,C4D542,707070,C18138,2D8699</colors>
+        <x>59%</x>
+        <y>50%</y>
+        <radius>50%</radius>
+        <inner_radius>40%</inner_radius>
+        <height>30</height>
+        <angle>45</angle>
+        <hover_brightness>25</hover_brightness>
+        <gradient>radial</gradient>
+        <gradient_ratio>-10,0,-10</gradient_ratio>
+    </pie>
+    <data_type>csv</data_type>
+    <add_time_stamp>1</add_time_stamp>
+    <thousands_separator>.</thousands_separator>
+    <background>
+        <alpha>100</alpha>
+    </background>
+    <balloon>
+        <show>{title}: {percents}%</show>
+        <alpha>90</alpha>
+        <border_color>666666</border_color>
+    </balloon>
+    <legend>
+        <x>7</x>
+        <y>7</y>
+        <max_columns>1</max_columns>
+        <spacing>5</spacing>
+        <key>
+            <size>15</size>
+        </key>
+        <values>
+            <width>0</width>
+        </values>
+    </legend>
+    <animation>
+        <start_time>1.8</start_time>
+        <start_effect>regular</start_effect>
+        <start_radius>50%</start_radius>
+        <sequenced>1</sequenced>
+        <pull_out_time>0.3</pull_out_time>
+        <pull_out_effect>strong</pull_out_effect>
+    </animation>
+    <data_labels>
+        <radius>35%</radius>
+        <max_width>140</max_width>
+    </data_labels>
+    <error_messages>
+        <enabled>0</enabled>
+        <color>666666</color>
+        <alpha>80</alpha>
+    </error_messages>
+    <context_menu>
+        <default_items>
+            <print>0</print>
+        </default_items>
+    </context_menu>
+    <labels>
+        <label lid="0">
+            <text>Source of referral</text>
+            <x>50%</x>
+            <text_color>333333</text_color>
+            <text_size>12</text_size>
+        </label>
+    </labels>
+</settings>
